@@ -1,5 +1,8 @@
 services:
   ifheroesbot:
+    dns:
+      - 8.8.8.8
+      - 1.1.1.1
     restart: always
     build:
       args:
@@ -7,8 +10,10 @@ services:
       - clientId=
       - guildId=
       - roleId=
-      - color=
+      - color=fff
       - api_url=https://api.ifheroes.de/v1/news
+      - botAdminRole=
+      - mongodbURI=mongodb://
     ports:
     - "8080:8080"
 
